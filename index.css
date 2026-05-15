@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --background: 220 20% 97%;
+  --foreground: 222 84% 5%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 84% 5%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --radius: 0.625rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-border shadow-sm;
+  }
+  .section-title {
+    @apply text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3;
+  }
+  .label {
+    @apply block text-sm font-medium text-foreground mb-1;
+  }
+  .input {
+    @apply w-full rounded-lg border border-input bg-white px-3 py-2 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary
+           placeholder:text-muted-foreground transition;
+  }
+  .select {
+    @apply w-full rounded-lg border border-input bg-white px-3 py-2 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary
+           transition appearance-none cursor-pointer;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground
+           px-5 py-2.5 text-sm font-semibold shadow hover:opacity-90 transition;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-border bg-white
+           px-4 py-2 text-sm font-medium hover:bg-accent transition;
+  }
+  .badge-pass   { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-700; }
+  .badge-manual { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100  text-amber-700; }
+  .badge-reject { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold bg-red-100    text-red-700; }
+  .badge-secured   { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700; }
+  .badge-unsecured { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-orange-100 text-orange-700; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+}
