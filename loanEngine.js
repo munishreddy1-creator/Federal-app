@@ -219,8 +219,8 @@ export function runLoanEngine(inputs) {
       id:          'dti',
       label:       'DTI Ratio',
       description: `DTI: ${(dti * 100).toFixed(1)}%`,
-      status:      dti <= 0.40 ? 'PASS' : dti <= 0.55 ? 'MANUAL' : 'REJECT',
-      threshold:   '≤40% Pass  |  40–55% Manual  |  >55% Reject',
+      status:      dti <= 0.60 ? 'PASS' : dti <= 0.65 ? 'MANUAL' : 'REJECT',
+      threshold:   '≤60% Pass  |  61–65% Manual  |  >65% Reject',
     },
     {
       id:          'ltv',
